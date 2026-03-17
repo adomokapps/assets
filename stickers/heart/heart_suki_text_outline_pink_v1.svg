@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+        <defs>
+          <!-- ハートのメイングラデーション -->
+          <linearGradient id="heartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffcada;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#ff8eb0;stop-opacity:1"/>
+          </linearGradient>
+          <!-- テキストの力強いビビッドピンク -->
+          <linearGradient id="textGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#ff4d94;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#f5006a;stop-opacity:1"/>
+          </linearGradient>
+          <!-- 柔らかなドロップシャドウ -->
+          <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+            <feOffset dx="0" dy="8"/>
+            <feComponentTransfer><feFuncA type="linear" slope="0.5"/></feComponentTransfer>
+            <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <g filter="url(#shadow)">
+          <!-- 外側の太い黒フチ -->
+          <path d="M250,430 C170,390 40,310 40,180 C40,110 100,70 160,70 C205,70 235,100 250,130 C265,100 295,70 340,70 C400,70 460,110 460,180 C460,310 330,390 250,430 Z" fill="black"/>
+          
+          <!-- ハート本体 -->
+          <path d="M250,412 C180,375 58,295 58,180 C58,122 110,88 160,88 C200,88 235,115 250,145 C265,115 300,88 340,88 C390,88 442,122 442,180 C442,295 320,375 250,412 Z" fill="url(#heartGrad)" stroke="#ff84a8" stroke-width="2"/>
+
+          <!-- ハート上部のハイライト -->
+          <path d="M100,160 Q120,105 180,115" fill="none" stroke="white" stroke-width="14" stroke-linecap="round" opacity="0.4"/>
+          <circle cx="125" cy="135" r="10" fill="white" opacity="0.3"/>
+
+          <!-- 「すき」テキスト：さらに下方向（270→285）へ移動 -->
+          <g transform="translate(250, 285) rotate(-2.5)">
+            <!-- テキストのフチ取り -->
+            <text x="0" y="0" font-family="sans-serif" font-size="150" font-weight="900" text-anchor="middle" fill="none" stroke="#e0005a" stroke-width="16" stroke-linejoin="round" letter-spacing="-10" transform="scale(0.9, 1.2)">すき</text>
+            <!-- テキスト本体 -->
+            <text x="0" y="0" font-family="sans-serif" font-size="150" font-weight="900" text-anchor="middle" fill="url(#textGrad)" letter-spacing="-10" transform="scale(0.9, 1.2)">すき</text>
+          </g>
+        </g>
+      </svg>
