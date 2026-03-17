@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 320" width="370" height="320">
+        <!-- 
+          画像の吹き出し形状をパスで再現
+          M: 開始点
+          L: 直線
+          Z: パスを閉じる
+        -->
+        <path d="M 20,20 &#10;             L 350,20 &#10;             L 350,240 &#10;             L 210,240 &#10;             L 100,240 &#10;             L 80,300 &#10;             L 80,240 &#10;             L 20,240 &#10;             Z" fill="white" stroke="black" stroke-width="12" stroke-linejoin="miter"/>
+      </svg>
