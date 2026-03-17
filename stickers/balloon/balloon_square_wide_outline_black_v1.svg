@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 320" width="370" height="320">
+        <!-- 
+          しっぽ（三角形部分）の幅を広げるためにパスの座標を調整
+          根元の幅を広げ、より力強い印象にしました
+        -->
+        <path d="M 20,20 &#10;             L 350,20 &#10;             L 350,240 &#10;             L 160,240 &#10;             L 80,300 &#10;             L 80,240 &#10;             L 20,240 &#10;             Z" fill="white" stroke="black" stroke-width="12" stroke-linejoin="miter"/>
+      </svg>
