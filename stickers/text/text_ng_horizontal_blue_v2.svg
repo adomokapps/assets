@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 320" width="370" height="320">
+        <defs>
+          <!-- ブルー〜パープルのグラデーション（NG専用配色） -->
+          <linearGradient id="vibrantBluePurple" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#38B6FF;stop-opacity:1"/>
+            <stop offset="50%" style="stop-color:#5271FF;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#8C52FF;stop-opacity:1"/>
+          </linearGradient>
+
+          <!-- 立体感を出すためのシャドウフィルター -->
+          <filter id="blockShadow" x="-20%" y="-20%" width="150%" height="150%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+            <feOffset in="blur" dx="0" dy="6" result="offsetBlur"/>
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="0.8"/>
+            </feComponentTransfer>
+            <feMerge>
+              <feMergeNode/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+
+          <!-- ハイライト用のグラデーション -->
+          <linearGradient id="topHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:white;stop-opacity:0.8"/>
+            <stop offset="40%" style="stop-color:white;stop-opacity:0"/>
+          </linearGradient>
+        </defs>
+
+        <!-- メイングループ：水平かつ中央配置 -->
+        <g transform="translate(185, 160)">
+          <!-- 1. 極太の白フチ（左右余白確保のためtextLengthを調整） -->
+          <g filter="url(#blockShadow)">
+            <text dominant-baseline="middle" text-anchor="middle" font-family="'Arial Black', 'Inter', 'Headline', sans-serif" font-size="140" font-weight="950" stroke="white" stroke-width="28" stroke-linejoin="round" textLength="310" lengthAdjust="spacingAndGlyphs">NG</text>
+          </g>
+
+          <!-- 2. 中身のグラデーション塗り -->
+          <g>
+            <text dominant-baseline="middle" text-anchor="middle" font-family="'Arial Black', 'Inter', 'Headline', sans-serif" font-size="140" font-weight="950" fill="url(#vibrantBluePurple)" textLength="310" lengthAdjust="spacingAndGlyphs">NG</text>
+          </g>
+
+          <!-- 3. 上部の光沢レイヤー -->
+          <g style="pointer-events: none;">
+            <text dominant-baseline="middle" text-anchor="middle" font-family="'Arial Black', 'Inter', 'Headline', sans-serif" font-size="140" font-weight="950" fill="url(#topHighlight)" textLength="310" lengthAdjust="spacingAndGlyphs">NG</text>
+          </g>
+        </g>
+      </svg>
